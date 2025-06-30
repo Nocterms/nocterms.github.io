@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowly Investment Scandal News Article</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+
+        /* Utility classes */
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .bg-gray-50 {
+            background-color: #f9fafb;
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-container {
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-desktop {
+            display: none;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-desktop {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            color: #6b7280;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #1f2937;
+        }
+
+        .subscribe-btn {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Main content */
+        .main-content {
+            max-width: 896px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+        }
+
+        .breadcrumb-current {
+            color: #1f2937;
+        }
+
+        /* Article */
+        .article {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .article-content {
+            padding: 2rem;
+        }
+
+        .category-tag {
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        .breaking-news {
+            background-color: #fef2f2;
+            color: #991b1b;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+
+        @media (min-width: 768px) {
+            .article-title {
+                font-size: 3rem;
+            }
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Article meta */
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-left {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .meta-left {
+                margin-bottom: 0;
+            }
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-icon {
+            width: 1rem;
+            height: 1rem;
+            color: #9ca3af;
+        }
+
+        .meta-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .meta-text:first-child {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .meta-right {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: none;
+            border: none;
+            color: #6b7280;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .action-btn:hover {
+            color: #2563eb;
+        }
+
+        .action-icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Article body */
+        .article-body {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            max-width: none;
+        }
+
+        .lead-paragraph {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .quote {
+            border-left: 4px solid #3b82f6;
+            padding: 1rem 0 1rem 1.5rem;
+            margin: 2rem 0;
+            background-color: #eff6ff;
+            font-style: italic;
+            font-size: 1.125rem;
+        }
+
+        .quote-red {
+            border-left-color: #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .info-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-box-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box-list {
+            color: #b45309;
+            list-style: none;
+        }
+
+        .info-box-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer {
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        /* Article footer */
+        .article-footer {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 3rem;
+            height: 3rem;
+            background-color: #dbeafe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+        }
+
+        .author-avatar svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-title {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .update-time {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* Related articles */
+        .related-section {
+            margin-top: 3rem;
+        }
+
+        .related-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .related-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .related-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-card-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .related-card-title:hover {
+            color: #2563eb;
+        }
+
+        .related-card-excerpt {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+        }
+
+        .related-card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1f2937;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-content {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-description {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .article-content {
+                padding: 1.5rem;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .meta-right {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .article-footer {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <h1 class="logo">TechDaily</h1>
+                        <nav class="nav-desktop">
+                            <a href="#" class="nav-link">Technology</a>
+                            <a href="#" class="nav-link">Business</a>
+                            <a href="#" class="nav-link">Finance</a>
+                            <a href="#" class="nav-link">Startups</a>
+                        </nav>
+                    </div>
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <span>Home</span> <span class="breadcrumb-separator">></span> 
+                <span>Business</span> <span class="breadcrumb-separator">></span> 
+                <span class="breadcrumb-current">Technology Scandals</span>
+            </nav>
+
+            <!-- Article -->
+            <article class="article">
+                <div class="article-content">
+                    <!-- Category Tag -->
+                    <div class="category-tag">
+                        <span class="tag breaking-news">Breaking News</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="article-title">
+                        Thousands of Crowly Users Lose Investments After Company Cites Obscure Terms of Service Clause
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="article-subtitle">
+                        Investment platform users discover they unknowingly agreed to let the company "borrow" their funds indefinitely for "market research purposes"
+                    </p>
+
+                    <!-- Article Meta -->
+                    <div class="article-meta">
+                        <div class="meta-left">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span class="meta-text">Sarah Mitchell</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span class="meta-text">March 15, 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span class="meta-text">5 min read</span>
+                            </div>
+                        </div>
+                        <div class="meta-right">
+                            <button class="action-btn">
+                                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                    <polyline points="16,6 12,2 8,6"></polyline>
+                                    <line x1="12" y1="2" x2="12" y2="15"></line>
+                                </svg>
+                                <span>Share</span>
+                            </button>
+                            <button class="action-btn">
+                                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span>Save</span>
+                            </button>
+                            <button class="action-btn">
+                                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                                <span>Comment</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <div class="article-body">
+                        <p class="lead-paragraph">
+                            In a shocking turn of events that has left the investment community reeling, over 47,000 users of the popular micro-investment platform Crowly discovered this week that their collective $23.7 million in investments had been "temporarily relocated" by the company under a previously overlooked clause buried deep within the platform's 847-page terms of service agreement.
+                        </p>
+
+                        <p>
+                            Users are now discovering that Section 7.3.2(b) of the terms, nestled between clauses about cookie preferences and push notification settings, grants Crowly "the irrevocable right to temporarily redistribute user assets for enhanced market research, competitive analysis, and executive team building exercises, including but not limited to company retreats in non-extradition territories."
+                        </p>
+
+                        <blockquote class="quote">
+                            "I thought I was investing in index funds, not funding someone's gap year in the Maldives," said Jennifer Walsh, a 34-year-old teacher who lost her entire $8,000 emergency fund. "Apparently, my money is now contributing to 'market research' at a five-star resort."
+                        </blockquote>
+
+                        <p>
+                            The clause, written in what legal experts are calling "weaponized legalese," was reportedly drafted by the same law firm that helped a major social media company claim ownership of users' firstborn children (a case that was later settled out of court for an undisclosed amount of cryptocurrency).
+                        </p>
+
+                        <h2 class="section-heading">The Fine Print Strikes Again</h2>
+
+                        <p>
+                            Crowly CEO Marcus "Tank" Thompson defended the company's actions in a statement released from what appears to be a yacht in international waters. "Our users clearly consented to these terms when they clicked 'I Agree' without reading," Thompson explained via satellite phone. "We're simply exercising our legal right to optimize their investment strategy through hands-on market immersion techniques."
+                        </p>
+
+                        <p>
+                            The company's head of legal affairs, Victoria Loophole (formerly a professional escape room designer), elaborated: "Section 7.3.2(b) is perfectly clear to anyone who reads the fine print with a magnifying glass while standing on one foot during a lunar eclipse. We even included helpful footnotes in 2-point font for clarity."
+                        </p>
+
+                        <div class="info-box">
+                            <h3 class="info-box-title">Key Points from Section 7.3.2(b):</h3>
+                            <ul class="info-box-list">
+                                <li>• Company may "borrow" user funds for market research lasting 2-84 months</li>
+                                <li>• Research includes "comprehensive analysis of luxury hospitality markets"</li>
+                                <li>• Users granted "exclusive viewing rights" to research via company Instagram stories</li>
+                                <li>• Refunds available only during the second Tuesday of months with 31 days that fall on a leap year</li>
+                            </ul>
+                        </div>
+
+                        <h2 class="section-heading">Community Response</h2>
+
+                        <p>
+                            The Crowly user community, previously known for their enthusiastic discussions about portfolio diversification, has now transformed into what can only be described as a support group for people who trusted an app with a cartoon crow as its mascot.
+                        </p>
+
+                        <blockquote class="quote quote-red">
+                            "I should have known something was up when the app's privacy policy included a section about 'treasure hunting' and 'finders keepers,'" lamented Robert Chen, who lost his wedding savings. "But the crow mascot was so friendly!"
+                        </blockquote>
+
+                        <p>
+                            Legal experts suggest that affected users may have limited recourse, as the terms of service were agreed to using the company's proprietary "QuickClick Consent Technology," which recorded each user's agreement timestamp, IP address, and what the company claims is "implied enthusiastic consent based on clicking speed."
+                        </p>
+
+                        <p>
+                            As of press time, Crowly's customer service chatbot continues to respond to user complaints with auto-generated messages about "exciting investment opportunities in marine real estate" and links to a livestream of dolphins that the company claims are "portfolio managers in training."
+                        </p>
+
+                        <p class="disclaimer">
+                            This is a developing story. Updates will be provided as more information becomes available, assuming our own investment portfolios remain intact.
+                        </p>
+                    </div>
+
+                    <!-- Article Footer -->
+                    <div class="article-footer">
+                        <div class="author-info">
+                            <div class="author-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="author-details">
+                                <h3 class="author-name">Sarah Mitchell</h3>
+                                <p class="author-title">Senior Technology Reporter</p>
+                            </div>
+                        </div>
+                        <div class="update-time">
+                            Updated: March 15, 2025 at 3:47 PM EST
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Related Articles -->
+            <section class="related-section">
+                <h2 class="related-title">Related Stories</h2>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <h3 class="related-card-title">
+                            Local Man Discovers His Crypto Wallet Was Actually A Digital Pet Rock Collection
+                        </h3>
+                        <p class="related-card-excerpt">
+                            "I've been feeding it virtual lettuce for three years," says confused investor...
+                        </p>
+                        <div class="related-card-meta">
+                            <span>Mar 14, 2025</span>
+                            <span>3 min read</span>
+                        </div>
+                    </div>
+                    <div class="related-card">
+                        <h3 class="related-card-title">
+                            Tech Startup Pivots From Food Delivery To Delivering Bad News
+                        </h3>
+                        <p class="related-card-excerpt">
+                            "We realized there was a gap in the market for professionally delivered disappointment," says CEO...
+                        </p>
+                        <div class="related-card-meta">
+                            <span>Mar 13, 2025</span>
+                            <span>4 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <h3 class="footer-title">TechDaily</h3>
+                    <p class="footer-description">Bringing you the latest in technology news and occasional corporate disasters.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
